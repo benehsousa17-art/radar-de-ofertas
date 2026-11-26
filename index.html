@@ -4,70 +4,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radar de Ofertas</title>
+<title>Radar de Ofertas | Encontre e Economize</title>
 <style>
-body{margin:0;font-family:Arial;background:#f4f4f4;color:#222}
-header{background:#171717;color:white;text-align:center;padding:25px}
-header h1{color:#ffcc00}
-nav{background:#333;padding:15px;text-align:center;color:white}
-main{max-width:1000px;margin:auto;padding:20px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#222}
+header{background:#171717;color:white;text-align:center;padding:28px 15px}
+header h1{color:#ffcc00;font-size:30px;margin:0}
+header p{margin-bottom:0}
+nav{background:#292929;padding:14px 8px;text-align:center}
+nav a{color:white;text-decoration:none;margin:7px;font-size:14px;display:inline-block}
+nav a:hover{color:#ffcc00}
+main{max-width:1100px;margin:auto;padding:20px 15px}
+.banner{background:#ffcc00;padding:25px 15px;border-radius:14px;text-align:center;margin-bottom:25px}
+.banner h2{margin-top:0}
+.busca{width:100%;padding:15px;border:1px solid #ccc;border-radius:9px;font-size:16px;margin-bottom:20px}
 h2{text-align:center}
 .produtos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.produto{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 2px 8px #ccc}
-.emoji{font-size:55px}
+.produto{background:white;padding:20px;border-radius:13px;text-align:center;box-shadow:0 3px 10px #ddd}
+.emoji{font-size:60px}
+.produto h3{font-size:17px;min-height:42px}
+.produto p{font-size:14px;line-height:1.5;color:#555}
 .comprar{display:block;background:#ffcc00;color:#171717;padding:14px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:15px}
-footer{background:#171717;color:white;text-align:center;padding:20px;margin-top:30px}
+.comprar:hover{background:#e9b900}
+.sobre{background:white;padding:22px;border-radius:12px;margin-top:30px;line-height:1.6}
+footer{background:#171717;color:white;text-align:center;padding:25px 15px;margin-top:30px;font-size:14px}
+.escondido{display:none}
 </style>
 </head>
 <body>
+
 <header>
 <h1>🔥 RADAR DE OFERTAS</h1>
 <p>Encontre. Compare. Economize!</p>
 </header>
-<nav>Todos | Automotivos | Beleza | Casa e Cozinha | Acessórios</nav>
-<main>
-<h2>🚨 OFERTAS IMPERDÍVEIS!</h2>
-<p style="text-align:center">Descubra produtos incríveis e aproveite grandes oportunidades.</p>
-<h2>🔥 Produtos em Destaque</h2>
-<div class="produtos">
 
-<div class="produto">
+<nav>
+<a href="#" data-cat="Todos">Todos</a>
+<a href="#" data-cat="Automotivos">Automotivos</a>
+<a href="#" data-cat="Beleza">Beleza</a>
+<a href="#" data-cat="Casa e Cozinha">Casa e Cozinha</a>
+<a href="#" data-cat="Acessórios">Acessórios</a>
+</nav>
+
+<main>
+<div class="banner">
+<h2>🚨 OFERTAS IMPERDÍVEIS!</h2>
+<p>Descubra produtos incríveis e aproveite grandes oportunidades!</p>
+</div>
+
+<input class="busca" id="busca" type="search" placeholder="🔎 Pesquise um produto...">
+
+<h2>🔥 Produtos em Destaque</h2>
+
+<div class="produtos" id="lista">
+
+<div class="produto" data-cat="Automotivos">
 <div class="emoji">🔋</div>
 <h3>Carregador Inteligente de Bateria Automotiva Woosh 12V 6A</h3>
 <p>Carregue e mantenha a bateria do seu veículo com praticidade e segurança.</p>
-<a class="comprar" href="https://meli.la/1xqsvjH">🛒 COMPRAR AGORA</a>
+<a class="comprar" href="https://meli.la/1xqsvjH" target="_blank" rel="noopener">🛒 COMPRAR AGORA</a>
 </div>
 
-<div class="produto">
+<div class="produto" data-cat="Beleza">
 <div class="emoji">✂️</div>
 <h3>Aparador de Pelos Super Groom 10 Mondial BG-10</h3>
 <p>Praticidade para cuidar do visual e aparar os pelos no dia a dia.</p>
-<a class="comprar" href="https://meli.la/1vhqKvK">🛒 COMPRAR AGORA</a>
+<a class="comprar" href="https://meli.la/1vhqKvK" target="_blank" rel="noopener">🛒 COMPRAR AGORA</a>
 </div>
 
-<div class="produto">
+<div class="produto" data-cat="Casa e Cozinha">
 <div class="emoji">🍴</div>
 <h3>Faqueiro Tramontina Búzios 24 Peças</h3>
 <p>Conjunto em aço inox para deixar sua mesa mais bonita e completa.</p>
-<a class="comprar" href="https://meli.la/1HVS4SE">🛒 COMPRAR AGORA</a>
+<a class="comprar" href="https://meli.la/1HVS4SE" target="_blank" rel="noopener">🛒 COMPRAR AGORA</a>
 </div>
 
-<div class="produto">
+<div class="produto" data-cat="Acessórios">
 <div class="emoji">🎒</div>
 <h3>Mochila Executiva Grande para Notebook</h3>
 <p>Espaço e praticidade para transportar seu notebook e seus acessórios.</p>
-<a class="comprar" href="https://meli.la/26nTrbE">🛒 COMPRAR AGORA</a>
+<a class="comprar" href="https://meli.la/26nTrbE" target="_blank" rel="noopener">🛒 COMPRAR AGORA</a>
 </div>
 
 </div>
-<h2>Sobre o Radar de Ofertas</h2>
+
+<section class="sobre">
+<h2>ℹ️ Sobre o Radar de Ofertas</h2>
 <p>Reunimos ofertas e oportunidades de diversas lojas virtuais para ajudar você a encontrar boas compras e economizar.</p>
+<p>📢 Alguns links são afiliados e podemos receber comissão pelas compras, sem custo adicional para você.</p>
+</section>
 </main>
+
 <footer>
-🔥 RADAR DE OFERTAS
+<strong>🔥 RADAR DE OFERTAS</strong>
 <p>Encontre. Compare. Economize!</p>
 <p>© 2026 - Todos os direitos reservados.</p>
-<p>Alguns links são afiliados e podemos receber comissão pelas compras.</p>
 </footer>
+
+<script>
+const busca=document.getElementById("busca");
+const produtos=document.querySelectorAll(".produto");
+let categoria="Todos";
+
+function filtrar(){
+const termo=busca.value.toLowerCase();
+produtos.forEach(p=>{
+const nome=p.querySelector("h3").textContent.toLowerCase();
+const cat=p.dataset.cat;
+const mostrar=nome.includes(termo)&&(categoria==="Todos"||cat===categoria);
+p.classList.toggle("escondido",!mostrar);
+});
+}
+
+busca.addEventListener("input",filtrar);
+document.querySelectorAll("nav a").forEach(link=>{
+link.addEventListener("click",e=>{
+e.preventDefault();
+categoria=link.dataset.cat;
+filtrar();
+});
+});
+</script>
+
 </body>
 </html>
