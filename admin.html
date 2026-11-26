@@ -84,10 +84,12 @@ async function entrar(){
  const {data,error}=await db.auth.signInWithPassword({email,password:senha});
  if(error){erro.textContent="Erro no acesso: "+error.message;return;}
  const user=data.user;
- let admin=await db.from("administradores").select("*").eq("id_usuario_uuid",user.id).maybeSingle();
-   admin=await db.from("administradores").select("*").eq("email",user.email).maybeSingle();
- }
- if(admin.error||!admin.data){
+ const {data:admin,error:adminError}=await db
+   .from("administradores")
+   .select("email")
+   .eq("email",user.email)
+   .maybeSingle();
+ if(adminError||!admin){
    await db.auth.signOut();
    erro.textContent="Usuário não autorizado como administrador.";
    return;
