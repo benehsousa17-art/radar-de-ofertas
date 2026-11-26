@@ -89,11 +89,17 @@ async function entrar(){
    .select("email")
    .eq("email",user.email)
    .maybeSingle();
- if(adminError||!admin){
+ if(adminError){
    await db.auth.signOut();
-   erro.textContent="Usuário não autorizado como administrador.";
+   erro.textContent="Erro ao consultar administradores: "+adminError.message;
    return;
- }
+}
+
+if(!admin){
+   await db.auth.signOut();
+   erro.textContent="Cadastro de administrador não encontrado. Confira o e-mail.";
+   return;
+}
  document.getElementById("login").classList.add("oculto");
  document.getElementById("painel").classList.remove("oculto");
  carregar();
