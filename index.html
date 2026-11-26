@@ -6,28 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radar de Ofertas</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f3f4f6;color:#111827}
-header{background:#111827;color:white;text-align:center;padding:25px 12px}
-header h1{color:#facc15;font-size:29px}
-header p{margin-top:8px}
-.banner{background:linear-gradient(135deg,#dc2626,#f97316);color:white;text-align:center;padding:40px 15px}
-.banner h2{font-size:27px;margin-bottom:12px}
-.busca{max-width:600px;margin:25px auto;padding:0 15px}
-.busca input{width:100%;padding:15px;border:1px solid #ddd;border-radius:10px;font-size:16px}
-.categorias{text-align:center;padding:10px}
-.categorias button{border:0;background:#111827;color:white;padding:10px 14px;margin:5px;border-radius:20px}
-.container{max-width:1000px;margin:auto;padding:25px 15px}
-.titulo{text-align:center;margin-bottom:25px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f5f7;color:#222}
+header{background:#101827;color:white;text-align:center;padding:28px 15px}
+header h1{margin:0;color:#ffb000;font-size:30px}
+header p{margin:10px 0 0}
+.banner{background:#ffb000;color:#171717;text-align:center;padding:18px;font-weight:bold}
+nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px}
+nav a{background:#172235;color:white;padding:10px 15px;border-radius:20px;text-decoration:none;font-size:14px}
+main{max-width:1000px;margin:auto;padding:15px}
+h2{text-align:center;margin:25px 0}
 .produtos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.produto{background:white;padding:22px;border-radius:12px;text-align:center;box-shadow:0 3px 12px #00000015}
-.imagem{font-size:65px;margin-bottom:12px}
-.produto h3{margin-bottom:10px}
-.produto p{color:#4b5563;line-height:1.5;margin-bottom:12px}
-.preco{color:#16a34a;font-size:22px;font-weight:bold;margin:12px}
-.botao{display:block;background:#16a34a;color:white;padding:13px;border-radius:8px;text-decoration:none;font-weight:bold}
-.sobre{background:white;padding:25px;border-radius:12px;margin-top:30px;text-align:center;line-height:1.7}
-footer{background:#111827;color:white;text-align:center;padding:25px;margin-top:30px;line-height:1.8}
+.card{background:white;border-radius:14px;padding:20px;text-align:center;box-shadow:0 3px 12px #00000012}
+.foto{font-size:65px;background:#f0f2f5;padding:20px;border-radius:12px}
+.card h3{font-size:18px}
+.card p{font-size:14px;line-height:1.5;color:#555}
+.categoria{color:#777;font-size:12px}
+.comprar{display:block;background:#ffb000;color:#171717;text-decoration:none;padding:13px;border-radius:9px;font-weight:bold;margin-top:15px}
+.comprar:hover{background:#f3a000}
+footer{background:#101827;color:white;text-align:center;padding:25px;margin-top:35px;font-size:13px}
 </style>
 </head>
 <body>
@@ -37,79 +34,64 @@ footer{background:#111827;color:white;text-align:center;padding:25px;margin-top:
 <p>Encontre. Compare. Economize!</p>
 </header>
 
-<section class="banner">
-<h2>🚨 OFERTAS IMPERDÍVEIS!</h2>
-<p>Descubra produtos incríveis e aproveite grandes oportunidades.</p>
-</section>
-
-<div class="busca">
-<input type="text" id="pesquisa" placeholder="🔎 Pesquise um produto..." oninput="filtrar()">
+<div class="banner">
+🚨 OFERTAS IMPERDÍVEIS! Aproveite nossas oportunidades!
 </div>
 
-<div class="categorias">
-<button onclick="categoria('todos')">Todos</button>
-<button onclick="categoria('eletronicos')">Eletrônicos</button>
-<button onclick="categoria('ferramentas')">Ferramentas</button>
-<button onclick="categoria('casa')">Casa</button>
-</div>
+<nav>
+<a href="#todos">Todos</a>
+<a href="#automotivos">Automotivos</a>
+<a href="#beleza">Beleza</a>
+<a href="#casa">Casa e Cozinha</a>
+<a href="#acessorios">Acessórios</a>
+</nav>
 
-<main class="container">
-<h2 class="titulo">🔥 Produtos em Destaque</h2>
+<main>
+<h2 id="todos">🔥 Produtos em Destaque</h2>
 
 <div class="produtos">
 
-<div class="produto" data-categoria="eletronicos">
-<div class="imagem">⌚</div>
-<h3>Smartwatch Inteligente</h3>
-<p>Tecnologia e estilo para seu dia a dia.</p>
-<div class="preco">Confira o preço</div>
-<a class="botao" href="#" target="_blank">VER OFERTA</a>
+<div class="card" id="automotivos">
+<div class="foto">🔋</div>
+<h3>Carregador Inteligente Woosh 12V 6A</h3>
+<span class="categoria">Automotivos</span>
+<p>Carregador inteligente bivolt para baterias de 4Ah a 100Ah. Ideal para motos, carros, caminhões e barcos.</p>
+<a class="comprar" href="https://meli.la/1xqsvjH" target="_blank" rel="noopener noreferrer">🛒 COMPRAR AGORA</a>
 </div>
 
-<div class="produto" data-categoria="ferramentas">
-<div class="imagem">🔧</div>
-<h3>Chave de Impacto</h3>
-<p>Potência e praticidade para seus projetos.</p>
-<div class="preco">Confira o preço</div>
-<a class="botao" href="#" target="_blank">VER OFERTA</a>
+<div class="card" id="beleza">
+<div class="foto">✂️</div>
+<h3>Aparador Mondial Super Groom 10 BG-10</h3>
+<span class="categoria">Beleza e Cuidados Pessoais</span>
+<p>Aparador de pelos multifuncional e bivolt. Praticidade para seus cuidados pessoais.</p>
+<a class="comprar" href="https://meli.la/1vhqKvK" target="_blank" rel="noopener noreferrer">🛒 COMPRAR AGORA</a>
 </div>
 
-<div class="produto" data-categoria="casa">
-<div class="imagem">🥤</div>
-<h3>Liquidificador</h3>
-<p>Praticidade para preparar suas receitas.</p>
-<div class="preco">Confira o preço</div>
-<a class="botao" href="#" target="_blank">VER OFERTA</a>
+<div class="card" id="casa">
+<div class="foto">🍴</div>
+<h3>Faqueiro Tramontina Búzios 24 Peças</h3>
+<span class="categoria">Casa e Cozinha</span>
+<p>Conjunto de talheres em aço inox com detalhes. Ideal para deixar sua mesa ainda mais bonita.</p>
+<a class="comprar" href="https://meli.la/1HVS4SE" target="_blank" rel="noopener noreferrer">🛒 COMPRAR AGORA</a>
+</div>
+
+<div class="card" id="acessorios">
+<div class="foto">🎒</div>
+<h3>Mochila Executiva Grande para Notebook</h3>
+<span class="categoria">Bolsas e Acessórios</span>
+<p>Mochila para viagens, trabalho e estudos. Modelo versátil para homens e mulheres.</p>
+<a class="comprar" href="https://meli.la/26nTrbE" target="_blank" rel="noopener noreferrer">🛒 COMPRAR AGORA</a>
 </div>
 
 </div>
-
-<section class="sobre">
-<h2>Sobre o Radar de Ofertas</h2>
-<p>Reunimos ofertas e oportunidades de diversas lojas virtuais para ajudar você a encontrar boas compras e economizar.</p>
-</section>
 </main>
 
 <footer>
-<p>🔥 RADAR DE OFERTAS</p>
+<h3>🔥 RADAR DE OFERTAS</h3>
 <p>Encontre. Compare. Economize!</p>
-<p>© 2026 - Todos os direitos reservados.</p>
+<p>Alguns links deste site são links de afiliado. Podemos receber comissão por compras realizadas através deles.</p>
+<p>© 2026 Radar de Ofertas</p>
 </footer>
-
-<script>
-function filtrar(){
-let busca=document.getElementById('pesquisa').value.toLowerCase();
-document.querySelectorAll('.produto').forEach(p=>{
-p.style.display=p.innerText.toLowerCase().includes(busca)?'block':'none';
-});
-}
-function categoria(cat){
-document.querySelectorAll('.produto').forEach(p=>{
-p.style.display=cat==='todos'||p.dataset.categoria===cat?'block':'none';
-});
-document.getElementById('pesquisa').value='';
-}
-</script>
 
 </body>
 </html>
